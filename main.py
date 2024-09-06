@@ -1,5 +1,5 @@
+import streamlit as st
 import plotly.graph_objs as go
-import plotly.offline as pyo
 import pandas as pd
 
 # Datos de ejemplo
@@ -39,5 +39,6 @@ layout = go.Layout(
 # Crear la figura
 fig = go.Figure(data=[trace1, trace2], layout=layout)
 
-# Mostrar la gráfica en modo offline
-pyo.plot(fig, filename='ventas_crecimiento.html')
+# Mostrar la gráfica en Streamlit
+st.title('Crecimiento de Ventas')
+st.plotly_chart(fig)
